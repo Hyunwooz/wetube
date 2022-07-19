@@ -67,3 +67,18 @@ base.pug를 만들어서
 extend base.pug 로 해당 템플릿에서 원하는 부분만 바꿀 수 있게 한다
 바꾸는 방법 base.pug에 block 이라는 공간을 집어넣어서
 block 을 base.pug가 아닌 다른 템플릿에서 바꿔주면된다!
+
+iteration하는 방법
+1. 먼저 array설정해주기
+2. array 넣을 템플릿에 가서
+each video(anything whatever you want) in videos(videoController에서 설정해준 array)
+li=video(same thing value before videoController에서 설정해준 array)
+여기서 주의해야 할 것! else는 JS가 아니다!
+
+/url -> absolute url -> root + /something
+url -> relative url -> root + last_page + /something
+ex)
+localhost:4000/something
+localhost:4000/last_page/something
+
+req.body << 할러면 input에 name 속성 추가 필수!!!!
