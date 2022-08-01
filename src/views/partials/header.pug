@@ -19,10 +19,7 @@ header
                             div
                                 span No img
                         else
-                            if loggedInUser.socialOnly
-                                img.header__avatar(src=loggedInUser.avatarUrl)
-                            else
-                                img.header__avatar(src="/"+loggedInUser.avatarUrl)
+                            img.header__avatar(src="/"+loggedInUser.avatarUrl)
                 
             else
                 li 
