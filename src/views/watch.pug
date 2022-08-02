@@ -32,12 +32,13 @@ block content
                     a(href=`${video.id}/edit`) Edit Video
                     br
                     a(href=`${video.id}/delete`) Delete Video
+        hr
     if loggedIn
         div.video__add-comments
             form.video__comment-form#commentForm
                 div.comment__avatars
                     img.comment__avatar(src="/"+loggedInUser.avatarUrl)
-                input(type="text",placeholder="Write a nice comment..",autofocus)
+                input(type="text",placeholder="Write a nice comment..")
                 button
                     i.fas.fa-paper-plane
 
@@ -46,7 +47,7 @@ block content
             each comment in video.comments.reverse()
                 li.video__comment(data-id=comment.id)
                     div
-                        i.fas.fa-comment
+                        i.fas.fa-user
                         span #{comment.text}
                     if loggedIn && (loggedInUser._id === String(comment.owner)) 
                         i.far.fa-trash-alt

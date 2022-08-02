@@ -1,4 +1,5 @@
 import express from "express";
+import jQuery from "jquery";
 import morgan from "morgan";
 import session from "express-session";
 import MongoStore from "connect-mongo";
