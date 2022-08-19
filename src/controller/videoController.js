@@ -147,4 +147,4 @@ export const deleteComment = async (req, res) => {
     } else {
       req.sendStatus(404);
     }
-  };
+};
