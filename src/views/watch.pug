@@ -3,7 +3,7 @@ extend base.pug
 block content
     
     div#videoContainer(data-Id=video._id)
-        video(src="/"+video.fileUrl)
+        video(src=video.fileUrl crossorigin)
         div#videoControls.videoControls
             div.videoControls__play
                 span#play.videoControls__playBtn
@@ -37,7 +37,7 @@ block content
         div.video__add-comments
             form.video__comment-form#commentForm
                 div.comment__avatars
-                    img.comment__avatar(src="/"+loggedInUser.avatarUrl)
+                    img.comment__avatar(src=loggedInUser.avatarUrl crossorigin)
                 input(type="text",placeholder="Write a nice comment..")
                 button
                     i.fas.fa-paper-plane
