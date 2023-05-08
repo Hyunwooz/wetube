@@ -129,7 +129,7 @@ export const registerView = async (req, res) => {
 export const createComment = async (req, res) => {
   const {
     session: { user },
-    body: { text },
+    body: { text, avatar_url },
     params: { id },
   } = req;
   const video = await Video.findById(id);
@@ -140,6 +140,7 @@ export const createComment = async (req, res) => {
     text,
     owner: user._id,
     video: id,
+    ownerAvatar: avatar_url,
   });
   video.comments.push(comment._id);
   video.save();
