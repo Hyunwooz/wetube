@@ -12,11 +12,56 @@ const fullScreenBtn = document.getElementById("fullScreen");
 const fullScreenIcon = fullScreenBtn.querySelector("i");
 const videoContainer = document.getElementById("videoContainer");
 const videoControls = document.getElementById("videoControls");
+const all_comment_time = document.querySelectorAll(".commnet_time");
 
 let controlsTimeout = null;
 let controlsMovementTimeout = null;
 let volumeValue = 0.5;
 video.volume = volumeValue;
+
+const timeForToday = (value) => {
+  // 현재 시간
+  const curr = new Date();
+  const utc = curr.getTime() + curr.getTimezoneOffset() * 60 * 1000;
+  const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
+
+  const today = new Date(utc + KR_TIME_DIFF);
+
+  // comment 입력 당시 날짜
+  const curr2 = new Date(value);
+  const utc2 = curr2.getTime() + curr2.getTimezoneOffset() * 60 * 1000;
+
+  const timeValue = new Date(utc2 + KR_TIME_DIFF);
+
+  const betweenTime = Math.floor(
+    (today.getTime() - timeValue.getTime()) / 1000 / 60
+  );
+  if (betweenTime < 1) return "방금전";
+  if (betweenTime < 60) {
+    return `${betweenTime}분전`;
+  }
+
+  const betweenTimeHour = Math.floor(betweenTime / 60);
+  if (betweenTimeHour < 24) {
+    return `${betweenTimeHour}시간전`;
+  }
+
+  const betweenTimeDay = Math.floor(betweenTime / 60 / 24);
+  if (betweenTimeDay < 365) {
+    return `${betweenTimeDay}일전`;
+  }
+
+  return `${Math.floor(betweenTimeDay / 365)}년전`;
+};
+
+const comment_time = () => {
+  all_comment_time.forEach((value) => {
+    text = timeForToday(value.textContent);
+    value.textContent = `· ${text}`;
+  });
+};
+
+comment_time();
 
 const hideControls = () => videoControls.classList.remove("showing");
 

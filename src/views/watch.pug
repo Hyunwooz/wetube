@@ -51,7 +51,7 @@ block content
                             img(src=comment.ownerAvatar crossorigin)
                         div
                             div.commnet_owner_name
-                                span username
+                                span #{comment.ownerName}
                                 span.commnet_time #{comment.createdAt}
                             div
                                 span #{comment.text}

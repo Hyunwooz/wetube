@@ -1,16 +1,16 @@
-# fly.toml app configuration file generated for test-app-server on 2023-05-05T17:18:29+09:00
+# fly.toml app configuration file generated for woohyun-dev on 2023-05-09T17:16:29+09:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "test-app-server"
+app = "woohyun-dev"
 primary_region = "nrt"
 
 [env]
-  PORT = "3000"
+  PORT = "8080"
 
 [http_service]
-  internal_port = 3000
+  internal_port = 8080
   force_https = true
   auto_stop_machines = true
   auto_start_machines = true
