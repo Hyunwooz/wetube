@@ -1,6 +1,7 @@
 header
     a(href="/").header__logo
         i.fab.fa-youtube
+        span.header__title Woohyun
     nav
         ul 
             li 
@@ -15,9 +16,9 @@ header
                     a(href="/users/logout") Log Out
                 li
                     a(href=`/users/${loggedInUser._id}`)
-                        if loggedInUser.avatarUrl === ""
-                            div
-                                span No img
+                        if loggedInUser.avatarUrl == "noImg"
+                            div.no__header__avatar
+                                i.fas.fa-user
                         else
                             if loggedInUser.socialOnly
                                 img.header__avatar(src=loggedInUser.avatarUrl  crossorigin)

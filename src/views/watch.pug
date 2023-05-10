@@ -36,7 +36,7 @@ block content
     if loggedIn
         div.video__add-comments
             form.video__comment-form#commentForm
-                div.comment__avatars
+                div.comment__avatars(id=loggedInUser.name)
                     img.comment__avatar(src=loggedInUser.avatarUrl crossorigin)
                 input(type="text",placeholder="Write a nice comment..")
                 button

@@ -6,10 +6,35 @@
     }
 }
 
-.edit-profile__password{
+.edit-profile__password {
     margin-top: 50px;
     text-align: center;
     a {
         text-decoration: underline;
+    }
+}
+
+#image_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+    }
+}
+
+.noImg__avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: rgb(221, 221, 221);
+    i {
+        font-size: 60px;
+        color: black;
     }
 }
