@@ -6,7 +6,8 @@
 .video-grid {
     display: grid;
     gap: 50px;
-    grid-template-columns: repeat(4,minmax(0,1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    min-width: 1200px;
 }
 
 .auth-switch {
